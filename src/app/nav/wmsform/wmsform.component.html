@@ -1,0 +1,171 @@
+<form class="form-horizontal" [formGroup]="form" (ngSubmit)="onSubmit()">
+  <ngx-spinner></ngx-spinner>
+  <div class="form-group ">
+    <label class="control-label col-sm-2 font-weight-normal" for="url">Server URL:</label>
+    <div class="col-sm-10">
+      <table class="form-table">
+        <tr>
+          <td>
+            <input type="text" class="form-control input-box" id="url" formControlName="URL"
+              placeholder="Enter Server URL" />
+          </td>
+          <td>
+            <button type="submit" class="btn btn-success">Go</button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <div *ngIf="getCapabilities == 'hit'">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="version">WMS Version:</label>
+      <div class="col-sm-4">
+        <select class="form-control" id="version" placeholder="Select Version" formControlName="Version">
+          <option *ngFor="let item of [versions]" [value]="item">{{
+            item
+          }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="Request">WMS Requests:</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="req" placeholder="Select a Request" formControlName="WMSRequest">
+          <option *ngFor="let item of wmsRequests" [value]="item">{{
+            item
+          }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group" *ngIf="getLayers">
+      <label class="control-label col-sm-2" for="layers">Layers:</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="layers" placeholder="Select Layers" formControlName="Layer">
+          <option *ngFor="let item of layers" [value]="item.Name">{{
+            item.Name
+          }}</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div class="wmsform" *ngIf="selectLayer && selectReq">
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="style">Style:</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="style" placeholder="Select style" formControlName="Styles">
+          <option *ngFor="let item of [styles]" [value]="item" selected>{{
+            item
+          }}</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="srs">SRS:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control input-box" id="srs" placeholder="Enter SRS" formControlName="SRS"
+          [value]="selectSRS" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="bbox">Bounding Box:</label>
+      <div class="col-sm-10">
+        <table class="form-table">
+          <tr>
+            <td>
+              Min X
+            </td>
+            <td>
+              Max X
+            </td>
+            <td>
+              Min Y
+            </td>
+            <td>
+              Max Y
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="float" class="form-control input-box" id="minx" placeholder="min x" formControlName="Minx"
+                [value]="selectMinx" />
+            </td>
+            <td>
+              <input type="float" class="form-control input-box" id="miny" placeholder="min y" formControlName="Miny"
+                [value]="selectMiny" />
+            </td>
+            <td>
+              <input type="float" class="form-control input-box" id="maxx" placeholder="max x" formControlName="Maxx"
+                [value]="selectMaxx" />
+            </td>
+            <td>
+              <input type="float" class="form-control input-box" id="maxy" placeholder="max y" formControlName="Maxy"
+                [value]="selectMaxy" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="bbox">Dimensions:</label>
+      <div class="col-sm-10">
+        <table class="form-table">
+          <tr>
+            <td>
+              Width
+            </td>
+            <td>
+              Height
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <input type="float" class="form-control input-box" id="width" placeholder="width" formControlName="Width"
+                [value]="selectWidth" />
+            </td>
+            <td>
+              <input type="float" class="form-control input-box" id="height" placeholder="height"
+                formControlName="Height" [value]="selectHeight" />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="format">Output Format:</label>
+      <div class="col-sm-10">
+        <select class="form-control" id="format" placeholder="Select format" formControlName="Format">
+          <option *ngFor="let item of format" [value]="item">{{ item }}</option>
+        </select>
+      </div>
+    </div>
+    <!-- <div class="form-group">
+      <label class="control-label col-sm-2" for="transparency"
+        >Transparency:</label
+      >
+      <div class="col-sm-10">
+        <input
+          type="range"
+          class="form-control"
+          id="transparency"
+          min="1"
+          max="100"
+          value="50"
+          class="slider"
+        />
+      </div>
+    </div> -->
+
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="SubmitWMSForm()">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>

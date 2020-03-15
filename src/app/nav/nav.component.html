@@ -1,0 +1,18 @@
+<nav class="navbar navbar-inverse">
+  <ul class="nav navbar-nav">
+    <li><a href="#" class="tab-wms" (click)="loadComponent('wms')">WMS</a></li>
+    <li><a href="#" class="tab-wfs" (click)="loadComponent('wfs')">WFS</a></li>
+    <li><a href="#" class="tab-wcs" (click)="loadComponent('wcs')">WCS</a></li>
+  </ul>
+</nav>
+<!-- {{selectedlink}} -->
+
+<div *ngIf="selectedlink=='wms'" class="form-container">
+  <app-wmsform></app-wmsform>
+</div>
+<div *ngIf="selectedlink=='wfs'" class="form-container ">
+  <app-wfsform></app-wfsform>
+</div>
+<div *ngIf="selectedlink=='wcs'" class="form-container">
+  <app-wcsform></app-wcsform>
+</div>

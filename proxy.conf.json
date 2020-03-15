@@ -1,0 +1,9 @@
+{
+  "/geoserver/*": {
+    "target": "http://localhost:8080",
+    "changeOrigin": true,
+    "secure": false,
+    "logLevel": "debug",
+    "pathRewrite": { "^/geoserver": "http://localhost:8080/geoserver" }
+  }
+}

@@ -1,0 +1,76 @@
+.form-container {
+  /* height: 100%; */
+  width: 100%;
+  padding: 10px;
+  /* opacity: 0.8; */
+  background-color: rgba(255, 255, 255, 0.856);
+
+}
+
+a:hover {
+  /* background-color: #ff0000 !important; */
+  /* background-image: -webkit-linear-gradient(top, #ff4d4d, #990000 100%) !important;
+  background-image: -o-linear-gradient(top, #ff4d4d 0, #990000 100%) !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4d4d), to(#990000)) !important;
+  background-image: linear-gradient(to bottom, #ff4d4d, #990000 100%) !important; */
+  font-size: x-large;
+}
+
+.tab {
+  color: #f1f1f1 !important;
+  text-shadow: none !important;
+  text-decoration-style: solid !important;
+}
+
+.navbar-inverse {
+  border: none !important;
+  background-image: -webkit-linear-gradient(top, #737373, #222 100%) !important;
+  background-image: -o-linear-gradient(top, #737373 0, #222 100%) !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4d4d), to(#800000)) !important;
+  background-image: linear-gradient(to bottom, #737373, #222 100%) !important;
+}
+
+.tab-wms {
+  background-image: -webkit-linear-gradient(top, #ff4d4d, #800000 100%) !important;
+  background-image: -o-linear-gradient(top, #ff4d4d 0, #800000 100%) !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff4d4d), to(#800000)) !important;
+  background-image: linear-gradient(to bottom, #ff4d4d, #800000 100%) !important;
+  color: white !important;
+  font-size: normal;
+  font-weight: bolder;
+  text-shadow: none !important;
+}
+
+.tab-wfs {
+  background-image: -webkit-linear-gradient(top, #ffff99, #808000 100%) !important;
+  background-image: -o-linear-gradient(top, #ffff99 0, #808000 100%) !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ffff99), to(#808000)) !important;
+  background-image: linear-gradient(to bottom, #ffff99, #808000 100%) !important;
+  color: white !important;
+  font-size: normal;
+  font-weight: bolder;
+  text-shadow: none !important;
+
+}
+
+.tab-wcs {
+  background-image: -webkit-linear-gradient(top, #80b3ff, #00394d 100%) !important;
+  background-image: -o-linear-gradient(top, #80b3ff 0, #00394d 100%) !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#80b3ff), to(#00394d)) !important;
+  background-image: linear-gradient(to bottom, #80b3ff, #00394d 100%) !important;
+  color: white !important;
+  font-size: normal;
+  font-weight: bolder;
+  text-shadow: none !important;
+
+}
+
+.background-black {
+  background-color: #fff;
+  color: #222;
+}
+
+
+/* a::after {
+  background-color: #003366 !important;
+} */

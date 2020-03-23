@@ -46,32 +46,32 @@ export class MapDataComponent implements OnInit, AfterViewInit {
   constructor(private interoperabilityService: InteroperabilityService) {}
 
   ngOnInit() {
-    this.getImageFromService();
+    // this.getImageFromService();
   }
 
-  getImageFromService() {
-    const yourImageUrl = this.interoperabilityService.getImage();
-    this.interoperabilityService.getImageFromServer(yourImageUrl).subscribe(
-      data => {
-        this.createImageFromBlob(data);
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
+  // getImageFromService() {
+  //   const yourImageUrl = this.interoperabilityService.getImage();
+  //   this.interoperabilityService.getImageFromServer(yourImageUrl).subscribe(
+  //     data => {
+  //       this.createImageFromBlob(data);
+  //     },
+  //     error => {
+  //       console.log(error);
+  //     }
+  //   );
+  // }
 
-  createImageFromBlob(image: Blob) {
-    let reader = new FileReader();
-    reader.addEventListener(
-      "load",
-      () => {
-        this.imageToShow = reader.result;
-      },
-      false
-    );
-    if (image) {
-      reader.readAsDataURL(image);
-    }
-  }
+  // createImageFromBlob(image: Blob) {
+  //   let reader = new FileReader();
+  //   reader.addEventListener(
+  //     "load",
+  //     () => {
+  //       this.imageToShow = reader.result;
+  //     },
+  //     false
+  //   );
+  //   if (image) {
+  //     reader.readAsDataURL(image);
+  //   }
+  // }
 }

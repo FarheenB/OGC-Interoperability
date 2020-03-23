@@ -11,7 +11,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { HttpClientModule, HttpClientJsonpModule } from "@angular/common/http";
 import { InteroperabilityService } from "./interoperability.service";
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
-import { NgxSpinnerModule } from "ngx-spinner";
+// import { NgxSpinnerModule } from "ngx-spinner";
 
 @NgModule({
   declarations: [
@@ -29,7 +29,7 @@ import { NgxSpinnerModule } from "ngx-spinner";
     ReactiveFormsModule,
     HttpClientModule,
     HttpClientJsonpModule,
-    NgxSpinnerModule
+    // NgxSpinnerModule
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   providers: [InteroperabilityService],

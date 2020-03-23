@@ -35,7 +35,7 @@ export class WmsformComponent implements OnInit {
   selectHeight = null;
   form = new FormGroup({
     URL: new FormControl(
-      "/geoserver/ows?service=wms&version=1.1.1&request=GetCapabilities",
+      "/geoserver/wms?service=wms&version=1.1.1&request=GetCapabilities",
       Validators.required
     ),
     Version: new FormControl(null),
@@ -55,7 +55,7 @@ export class WmsformComponent implements OnInit {
   constructor(
     private interoperabilityService: InteroperabilityService,
     private ngxXml2jsonService: NgxXml2jsonService,
-    private spinner: NgxSpinnerService
+    // private spinner: NgxSpinnerService
   ) {}
 
   ngOnInit() {
@@ -103,11 +103,7 @@ export class WmsformComponent implements OnInit {
             // this.form.controls["Maxx"].setValue(this.selectMaxx);
             this.selectMaxy = this.selectBbox["@attributes"]["maxy"];
             // this.form.controls["Maxy"].setValue(this.selectMaxy);
-            // console.log(this.selectReq);
-            // console.log(this.selectLayer);
-            // console.log(this.selectSRS);
-            // console.log(this.selectFormat);
-            // console.log(this.selectStyles);
+            
           }
         }
       }
@@ -118,12 +114,12 @@ export class WmsformComponent implements OnInit {
     if (this.getCapabilities == "notHit") {
       const urlLoc = this.form.controls["URL"].value;
       console.log(urlLoc);
-      this.spinner.show();
+      // this.spinner.show();
       this.interoperabilityService.getData(urlLoc).subscribe(data => {
         const parser = new DOMParser();
         const xml = parser.parseFromString(data, "text/xml");
         this.obj = this.ngxXml2jsonService.xmlToJson(xml);
-        this.spinner.hide();
+        // this.spinner.hide();
         this.getCapabilities = "hit";
 
         if (this.getCapabilities == "hit") {
